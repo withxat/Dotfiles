@@ -1,0 +1,9 @@
+.config
+
+# Bat
+!.config/bat/config
+!.config/bat/themes/*
+
+# Zed
+!.config/zed/keymap.json
+!.config/zed/settings.json

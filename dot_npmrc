@@ -1,0 +1,5 @@
+cache=~/.cache/npm
+init-author-email=i@xat.sh
+init-author-name=Xat
+init-author-url=https://xat.sh
+init-license=MIT

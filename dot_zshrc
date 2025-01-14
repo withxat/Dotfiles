@@ -1,0 +1,76 @@
+# Setup p10k instant prompt
+if [[ -r "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Setup PATH
+path=(
+  /opt/homebrew/bin
+  /opt/homebrew/opt/openjdk/bin
+  $HOME/.cargo/bin
+  $path
+)
+export PATH
+
+# Setup FPATH
+fpath=(
+  $HOME/.oh-my-zsh/custom/plugins/zsh-completions/src
+  $fpath
+)
+
+# Setup timestamp format
+export HIST_STAMPS="yyyy-mm-dd"
+
+# Setup UTF-8
+export LANG="en_US.UTF-8"
+
+# Use bat to colorize man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Setup pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+
+
+# Setup Homebrew
+export HOMEBREW_NO_ENV_HINTS="true"
+export HOMEBREW_NO_ANALYTICS="true"
+
+# Setup zsh-autosuggestions
+export ZSH_AUTOSUGGEST_USE_ASYNC="true"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+# Setup oh-my-zsh plugins
+plugins=(
+  gitignore
+  fnm
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+)
+
+# Set personal aliases
+alias DEV="cd ~/Developer"
+alias dev="cd ~/Developer"
+alias clr="clear"
+alias ..="cd .."
+alias 。。="cd .."
+alias ...="cd ../.."
+alias 。。。="cd ../.."
+alias ....="cd ../../.."
+alias 。。。。="cd ../../.."
+alias cat="bat" # Use bat replace cat
+alias vi="nvim" # Use Neovim replace vim
+alias vim="nvim" # Use Neovim replace vim
+alias sudo='sudo ' # Enable sudo in aliased
+
+# Setup fnm
+eval "$(fnm env --use-on-cd --corepack-enabled --version-file-strategy=recursive --resolve-engines --shell zsh)"
+
+# Setup p10k
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.p10k.zsh
+
+# Setup oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh

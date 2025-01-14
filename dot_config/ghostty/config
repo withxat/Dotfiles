@@ -1,0 +1,5 @@
+clipboard-read = allow
+window-padding-balance = true
+theme = catppuccin-mocha
+font-family = Maple Mono NF CN
+macos-titlebar-style = native
